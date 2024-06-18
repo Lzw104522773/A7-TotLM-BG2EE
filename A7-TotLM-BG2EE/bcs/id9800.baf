@@ -34,16 +34,15 @@ IF
   Global("fog_disabled","ID9800",0)
 THEN
   RESPONSE #100
-    SetGlobal("FOG_TYPE","GLOBAL",1)
     Weather(FOG)
     Continue()
 END
 
 IF
-  Global("fog_disabled","ID9800",1)
   OR(2)
     OnCreation()
     PartyRested()
+  Global("fog_disabled","ID9800",1)
 THEN
   RESPONSE #100
     SetGlobal("fog_disabled","ID9800",2)
